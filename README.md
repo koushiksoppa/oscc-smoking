@@ -253,15 +253,7 @@ this repository are the author's. Automated tooling produced screening *suggesti
 stored in a separate file and are never treated as decisions; this distinction is enforced in code
 and reported in every output.
 
-**AI-assistance disclosure.** This project was developed with substantial assistance from a large
-language model (Anthropic Claude) acting as a programming and documentation assistant, under the
-author's direction and review. That assistance covered implementation of the pipeline, test suite
-and reporting infrastructure, drafting and editing of documentation, and auditing of internal
-consistency. It did **not** extend to any research judgement: eligibility decisions, screening
-adjudication, risk-of-bias appraisal and the interpretation of evidence remain the author's alone,
-and the repository is deliberately constructed so that automated output cannot satisfy a reviewer
-decision field. The development repository's commit history records where that assistance was
-applied.
+
 
 **Methodological sources.** PRISMA 2020 (Page et al.), PRISMA-S (Rethlefsen et al.), MOOSE (Stroup
 et al.), the Cochrane Handbook for Systematic Reviews of Interventions v6.5, DerSimonian & Laird
