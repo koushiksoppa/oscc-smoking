@@ -1,0 +1,94 @@
+table,field,type,required,status,depends_on,description
+studies,study_id,id,yes,,,Unique study population; the unit of analysis (D004)
+studies,report_ids,list,no,,,"All publications of this population, semicolon-separated"
+studies,primary_report_id,id,yes,,,The report used for extraction
+studies,pmid,text,no,,,Of the primary report
+studies,doi,text,no,,,Of the primary report
+studies,first_author,text,yes,,,As reported
+studies,pub_year,year,yes,,,As reported
+studies,country,text,yes,,,As reported
+studies,journal,text,no,,,As reported
+studies,source_database,text,no,,,Provenance: which search execution found it
+studies,full_text_source,text,no,,,How the full text was obtained
+studies,design,enum,yes,,,Observational design
+studies,design_detail,enum,no,,,Design detail
+studies,setting,enum,no,,,Recruitment setting
+studies,centres,enum,no,,,Single or multicentre
+studies,recruitment_period,text,no,,,As reported
+studies,n_total,count,no,,,Total participants
+studies,n_cases,count,no,,,NA for cohorts without a control group
+studies,n_controls,count,no,,,Controls
+studies,person_years,number,no,,,Cohorts only; NA otherwise
+studies,age_summary,text,no,,,"As reported, with the statistic named"
+studies,sex_distribution,text,no,,,As reported
+studies,outcome_ascertainment,text,no,,,"Registry, pathology records, or other"
+studies,exposure_ascertainment,text,no,,,"How smoking status was ascertained: interview, self-administered questionnaire, medical or employment records, proxy respondent. As reported. Counterpart of outcome_ascertainment; bears on recall and misclassification"
+studies,matching_variables,list,no,,,"Factors cases and controls were matched on, verbatim; NA if unmatched, NR if not stated. A design feature, DISTINCT from adjusted_for, which records multivariable adjustment"
+studies,histology_confirmed,enum,no,,,D008
+studies,scc_proportion,percent,no,,,Reported per cent SCC; D008 requires at least 90 unless histology_confirmed is all
+studies,anatomical_sites,text,no,,,"Subsites as reported, verbatim"
+studies,site_separable,enum,no,,,Is an oral-cavity-specific estimate available
+studies,case_definition,text,no,,,Incident or prevalent; ICD codes if given
+studies,extracted_by,text,no,,,Human reviewer (D010)
+studies,extraction_date,text,no,,,Date of extraction
+studies,extraction_confidence,enum,no,,,Reviewer's confidence
+studies,notes,text,no,,,Free text
+estimates,estimate_id,id,yes,,,Unique per estimate
+estimates,study_id,id,yes,,,Must exist in the studies table
+estimates,report_id,id,no,,,Report the estimate came from
+estimates,source_location,text,yes,,,REQUIRED. For example Table 3 row 2 p. 1145
+estimates,measure,enum,yes,,,Effect measure
+estimates,estimate,number,yes,,,As reported
+estimates,ci_low,number,yes,,,As reported
+estimates,ci_high,number,yes,,,As reported
+estimates,ci_level,number,no,,,Only 0.95 is handled downstream
+estimates,se_reported,number,no,,,If the paper gives it
+estimates,p_value_reported,text,no,,,"As reported, including forms such as <0.001"
+estimates,log_estimate_calc,number,no,,,DERIVED: never typed by hand
+estimates,se_calc,number,no,,,DERIVED
+estimates,derivation,text,no,,,Formula and inputs used for any derived value
+estimates,adjustment,enum,yes,,,Crude or multivariable
+estimates,adjusted_for,list,no,,,Full covariate list verbatim; NA if crude
+estimates,adjusted_alcohol,enum,yes,,,Own field: key confounder (D009)
+estimates,adjusted_age,enum,no,,,Adjusted for age
+estimates,adjusted_sex,enum,no,,,Adjusted for sex
+estimates,adjusted_ses,enum,no,,,Adjusted for socioeconomic status
+estimates,adjusted_smokeless_tobacco,enum,no,,,"Confounder, not exposure (D009)"
+estimates,adjusted_betel_quid,enum,no,,,Adjusted for betel quid
+estimates,adjusted_hpv,enum,no,,,Adjusted for HPV
+estimates,exposure_definition,text,no,,,Verbatim
+estimates,exposure_category,text,no,,,Verbatim label; NEVER auto-mapped (rule 9)
+estimates,exposure_contrast,enum,no,unresolved,P004,Contrast as reported; primary contrast pending P004
+estimates,product_types,list,no,,,cigarette / bidi / cigar / pipe / mixed / NR (D009)
+estimates,intensity_value,number,no,,,"Numeric intensity if reported, for example cigarettes per day"
+estimates,intensity_unit,text,no,,,"Unit for intensity_value, for example cigarettes per day"
+estimates,duration_value,number,no,,,Smoking duration as reported; NR if not reported
+estimates,duration_unit,text,no,,,"Unit for duration_value, for example years"
+estimates,pack_years,number,no,,,Pack-years exactly as reported; never derived here
+estimates,cumulative_value,number,no,,,Any other cumulative exposure metric as reported
+estimates,cumulative_unit,text,no,,,"Unit for cumulative_value, for example cigarette-years"
+estimates,comparator_definition,text,no,,,Verbatim
+estimates,comparator_type,enum,no,unresolved,P003,Reference group as reported; eligibility pending P003
+estimates,outcome_site,text,no,,,Site this estimate refers to
+estimates,n_exposed_cases,count,no,,,2x2 cell a
+estimates,n_exposed_controls,count,no,,,2x2 cell b
+estimates,n_unexposed_cases,count,no,,,2x2 cell c
+estimates,n_unexposed_controls,count,no,,,2x2 cell d
+estimates,verified,enum,yes,,,Must be yes before an estimate enters synthesis
+estimates,verified_by,text,no,,,Who verified it
+estimates,verification_notes,text,no,,,Free text
+estimates,selected_for_analysis,enum,no,,,At most one per study per analysis (D004); a reviewer decision
+estimates,selection_rationale,text,no,,,Required when selected_for_analysis is yes
+estimates,notes,text,no,,,Free text
+risk_of_bias,study_id,id,yes,,,The study appraised; the unit of analysis (D004)
+risk_of_bias,tool,text,yes,unresolved,P023,"Name of the appraisal instrument, recorded verbatim. Not pre-selected; pending P023"
+risk_of_bias,tool_version,text,no,,,"Version or launch date of the instrument, as published"
+risk_of_bias,domain,text,yes,unresolved,P023,Domain name as defined by the chosen instrument. Domain names are not defined here
+risk_of_bias,judgement,text,yes,unresolved,P023,"Judgement for this domain, using the chosen instrument's own categories. Categories are not defined here"
+risk_of_bias,supporting_evidence,text,no,,,Quotation or location in the source supporting the judgement (provenance rule 4)
+risk_of_bias,justification,text,no,,,Why the judgement follows from the evidence
+risk_of_bias,information_missing,text,no,,,"What the report does not state; a missing value is recorded, never inferred"
+risk_of_bias,assessed_by,text,no,,,Initials of the human assessor. An automated suggestion is never an assessment (D010)
+risk_of_bias,assessment_date,date,no,,,ISO date the assessment was made
+risk_of_bias,disagreement_resolution,text,no,,,"How a disagreement between assessors was resolved, where more than one assessed"
+risk_of_bias,notes,text,no,,,Free text

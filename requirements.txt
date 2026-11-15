@@ -1,0 +1,8 @@
+# Direct dependencies of the committed code only, verified against actual imports.
+pyyaml==6.0.3          # config/sources.yaml, config/screening.yaml
+pytest==9.1.1          # test suite
+scipy==1.18.1          # scripts/analysis/meta.py — chi2, normal, t distributions; linregress
+matplotlib==3.11.2     # scripts/analysis/plots.py — forest and funnel plots
+
+# numpy is deliberately NOT pinned: no module imports it directly. It arrives as a transitive
+# dependency of scipy and matplotlib, which pin their own requirement better than this file could.
