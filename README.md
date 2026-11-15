@@ -248,17 +248,13 @@ repository is the final submitted artefact.
 
 **Author and reviewer.** Soppa Shiva Sai Koushik — National Institute of Technology, Rourkela.
 
-All methodological decisions, all screening classifications and all protocol judgements recorded in
-this repository are the author's. Automated tooling produced screening *suggestions*, which are
-stored in a separate file and are never treated as decisions; this distinction is enforced in code
-and reported in every output.
-
 **Development and Research Responsibility.** The project software, testing infrastructure,
 documentation and reporting workflow were developed under the author's direction and review. All
 research-related decisions, including eligibility criteria, screening adjudication, risk-of-bias
 assessment and interpretation of evidence, remain the author's responsibility. Automated outputs
 were used only as technical support and were not treated as independent research judgements or
-substitutes for human review.
+substitutes for human review: screening *suggestions* are stored in a separate file, are never
+written into a decision field, and that separation is enforced in code and reported in every output.
 
 **Methodological sources.** PRISMA 2020 (Page et al.), PRISMA-S (Rethlefsen et al.), MOOSE (Stroup
 et al.), the Cochrane Handbook for Systematic Reviews of Interventions v6.5, DerSimonian & Laird
