@@ -228,7 +228,7 @@ as part of the audit trail.
 This repository is a **clean published snapshot** of a verified commit. It is not the development
 history.
 
-| | |
+| Item | Detail |
 |---|---|
 | Development and provenance repository | **https://github.com/koushiksoppa/oscc-smoking-meta-analysis** |
 | Source commit | **`cf8a4a9b036db475d28dcea07ae58d1c4fb78fed`** |
