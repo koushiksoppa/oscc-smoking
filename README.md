@@ -253,7 +253,12 @@ this repository are the author's. Automated tooling produced screening *suggesti
 stored in a separate file and are never treated as decisions; this distinction is enforced in code
 and reported in every output.
 
-
+**Development and Research Responsibility.** The project software, testing infrastructure,
+documentation and reporting workflow were developed under the author's direction and review. All
+research-related decisions, including eligibility criteria, screening adjudication, risk-of-bias
+assessment and interpretation of evidence, remain the author's responsibility. Automated outputs
+were used only as technical support and were not treated as independent research judgements or
+substitutes for human review.
 
 **Methodological sources.** PRISMA 2020 (Page et al.), PRISMA-S (Rethlefsen et al.), MOOSE (Stroup
 et al.), the Cochrane Handbook for Systematic Reviews of Interventions v6.5, DerSimonian & Laird
